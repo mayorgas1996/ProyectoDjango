@@ -168,6 +168,17 @@ nav ul li a:hover{
     margin-top: 5px;
 }
 
+.date {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: gray;
+}
+
+.content {
+    line-height: 25px;
+}
+
 .article-item .image{
     float: left;
     width: 200px;
