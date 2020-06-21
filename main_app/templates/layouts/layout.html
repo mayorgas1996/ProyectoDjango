@@ -27,9 +27,12 @@
                 <li>
                     <a href="{% url 'inicio' %}">Inicio</a>
                 </li>
-                <li>
-                    <a href="{% url 'about' %}">Sobre mi</a>
-                </li>
+
+                {% for page in pages %}
+                    <li>
+                        <a href = "{% url 'page' page.2 %}">{{page.1}}</a>
+                    </li>
+                {% endfor %}
 
             </ul>
             

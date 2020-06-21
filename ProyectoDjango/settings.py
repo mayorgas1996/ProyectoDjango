@@ -64,6 +64,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                #Con esto podremos utilizar las paginas que haya en la BBDD en cualquier plantilla            
+                'pages.context_processor.get_pages'
             ],
         },
     },
