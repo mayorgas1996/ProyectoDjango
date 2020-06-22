@@ -27,7 +27,7 @@ class Article(models.Model):
     #Relación 1 a 1 -> Un articulo pertenece a un Usuario
     user = models.ForeignKey(User, verbose_name = "Usuario", on_delete=models.CASCADE) 
     #Relación muchos a muchos -> muchos articulos pueden tener muchas categorías
-    category = models.ManyToManyField(Category, verbose_name='Categorías', null=True, blank=True) 
+    category = models.ManyToManyField(Category, verbose_name='Categorías', blank=True) 
 
     class Meta:
         verbose_name = 'Artículo'
