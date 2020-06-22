@@ -9,6 +9,7 @@ class Page(models.Model):
     visible = models.BooleanField(verbose_name="¿Visible?")
     created_at =models.DateTimeField(auto_now_add = True, verbose_name="Creado el")
     updated_at = models.DateTimeField(auto_now = True, verbose_name="Actualizado el")
+    order = models.IntegerField(default = 0, verbose_name="Orden")
 
     class Meta: 
         verbose_name = "Página"
