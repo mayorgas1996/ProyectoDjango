@@ -31,15 +31,11 @@
                 <li>
                     <a href="{% url 'list_articles' %}">Categorías</a>
                     <ul>
-                        <li>
-                            <a href="{% url 'inicio' %}">Categoría 1</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'inicio' %}">Categoría 2</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'inicio' %}">Categoría 3</a>
-                        </li>
+                        {% for cat in categories %}
+                            <li>
+                                <a href="{% url 'inicio' %}">{{cat.1}}</a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </li>
 

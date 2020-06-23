@@ -68,7 +68,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 #Con esto podremos utilizar las paginas que haya en la BBDD en cualquier plantilla            
-                'pages.context_processor.get_pages'
+                'pages.context_processor.get_pages',
+                #Con esto podremos utilizar las categorías que haya en la BBDD en cualquier plantilla            
+                'blog.processor.get_categories'
             ],
         },
     },
