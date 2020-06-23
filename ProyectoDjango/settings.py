@@ -126,6 +126,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # CKeditor
 CKEDITOR_CONFIGS = {

@@ -19,7 +19,7 @@ class Category(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=159, verbose_name='Titulo')
     content = RichTextField(verbose_name='Contenido')
-    image = models.ImageField(default='null', verbose_name='Imagen')
+    image = models.ImageField(default='null', verbose_name='Imagen', upload_to='articles')
     public = models.BooleanField(verbose_name="¿Publicado?")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha creación")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha modificación")
@@ -32,6 +32,7 @@ class Article(models.Model):
     class Meta:
         verbose_name = 'Artículo'
         verbose_name_plural = 'Artículos'
-    
+        ordering = ['-created_at',]
+
     def __str__(self):
         return self.title
