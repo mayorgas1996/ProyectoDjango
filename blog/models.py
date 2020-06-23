@@ -25,7 +25,7 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha modificación")
     
     #Relación 1 a 1 -> Un articulo pertenece a un Usuario
-    user = models.ForeignKey(User, verbose_name = "Usuario", on_delete=models.CASCADE) 
+    user = models.ForeignKey(User, verbose_name = "Usuario", on_delete=models.CASCADE, editable = False) 
     #Relación muchos a muchos -> muchos articulos pueden tener muchas categorías
     category = models.ManyToManyField(Category, verbose_name='Categorías', blank=True) 
 
