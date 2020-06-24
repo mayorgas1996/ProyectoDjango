@@ -33,7 +33,7 @@
                     <ul>
                         {% for cat in categories %}
                             <li>
-                                <a href="{% url 'inicio' %}">{{cat.1}}</a>
+                                <a href="{% url 'category' cat.0 %}">{{cat.1}}</a>
                             </li>
                         {% endfor %}
                     </ul>
