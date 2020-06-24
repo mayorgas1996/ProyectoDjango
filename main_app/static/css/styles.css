@@ -63,7 +63,11 @@ body{
 
 }
 
-.box form input[type="text"], .box form textarea, .box form select{
+.box form input[type="text"],
+.box form input[type="email"],
+.box form input[type="password"],
+.box form textarea, 
+.box form select{
     width: 100%;
     margin-bottom: 10px;
 }
@@ -218,7 +222,7 @@ nav > ul > li:hover > ul > li:hover a{
     color: white;
 }
 
-.message{
+.message .alert-success .alert{
 
     padding: 20px;
     background: #1f7e58;
@@ -226,6 +230,10 @@ nav > ul > li:hover > ul > li:hover a{
     text-align: center;
     margin-bottom: 10px;
 
+}
+
+.alert-warning{
+    background: red;
 }
 
 .title{

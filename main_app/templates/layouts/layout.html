@@ -28,6 +28,7 @@
                     <a href="{% url 'inicio' %}">Inicio</a>
                 </li>
 
+                {% if user.email %}
                 <li>
                     <a href="{% url 'list_articles' %}">Categorías</a>
                     <ul>
@@ -45,9 +46,14 @@
                     </li>
                 {% endfor %}
             
+                {% else %}
                 <li>
                     <a href="{% url 'register' %}">Registro</a>
                 </li>
+                <li>
+                    <a href="{% url 'login' %}">Login</a>
+                </li>
+                {% endif %}
 
             </ul>
             

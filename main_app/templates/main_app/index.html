@@ -5,4 +5,24 @@
 
 {% block content %}
     <h1>{{title}}</h1>
+
+    {% if messages %}
+
+        {%for message in messages%}
+            <div class="message alert-success">
+                {{message}}
+            </div>
+        {%endfor%}
+
+    {% endif %}
+
+    {%if user.email %}
+        <h2>Bienvenido, {{request.user.first_name}}</h2>
+        <p>
+            {{user.email}}
+        </p>
+    {% else %}
+        <h2> Identifícate para ver más cosas </h2>
+    {% endif %}
+    
 {% endblock %}
