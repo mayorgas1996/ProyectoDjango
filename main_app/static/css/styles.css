@@ -43,6 +43,15 @@ body{
 
 }
 
+.box a{
+    color: #444;
+}
+
+.box a:hover{
+    transition: all 100ms;
+    color: #1f7e58;
+}
+
 .box form{
     width: 40%;
 }
@@ -82,6 +91,17 @@ body{
     background: #1f7e58;
     transition: 300ms all;
 }
+
+.box .image {
+    float: left;
+    margin-right: 40px;
+    max-width: 400px;
+}
+
+.box .image img{
+    width: 100%;
+}
+
 
 /* Estilos cabecera */
 header{

@@ -6,7 +6,9 @@
 {% block content %}
     <h1 class="title" >{{category.name}}</h1>
     
-    {% include 'articles/articles.html'%}
+    <p> {{category.description}} </p>
+
+    {% include 'articles/articles.html' with article='articles'%}
 
 
 

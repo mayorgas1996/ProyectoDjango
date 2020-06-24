@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from blog.models import Category, Article
 
 
@@ -13,8 +13,17 @@ def list(request):
     })
 
 def category(request, category_id):
-    category = Category.objects.get(id = category_id)
+    category = get_object_or_404(Category, id = category_id)
+    articles = Article.objects.filter(category = category_id)
 
     return render(request,'categories/category.html',{
-        'category':category
+        'category':category,
+        'articles':articles
+    })
+
+def article(request, article_id):
+    article = get_object_or_404(Article, id = article_id)
+
+    return render(request,'articles/detail.html',{
+        'article':article
     })
