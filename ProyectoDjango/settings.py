@@ -89,6 +89,25 @@ DATABASES = {
     }
 }
 
+'''
+-- EJEMPLO PARA CONFIGURAR LA BBDD EN MYSQL EN LUGAR DE SQLITE
+-- TRAS PONER ESTO HABRÍA QUE MIGRAR TODO PARA QUE SE GENERE EL 
+-- ESQUEMA DE BBDD Y LAS TABLAS NECESARIAS EN LA BBDD
+
+-- TAMBIÉN SE TENDRÍA QUE CREAR UN SUPERUSUARIO CON EL COMANDO
+-- SIGUIENTE: python manage.py createsuperuser Y LISTO!
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backend.mysql',
+        'NAME': 'proyecto_django',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    }
+}
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

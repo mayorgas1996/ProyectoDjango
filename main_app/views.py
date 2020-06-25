@@ -18,39 +18,50 @@ def about(request):
 
 def register_page(request):
 
-    register_form = RegisterForm()
+    if request.user.is_authenticated:
+        return redirect('inicio')
+    else:
+        register_form = RegisterForm()
 
-    if request.method == 'POST':
-        register_form = RegisterForm(request.POST)
+        if request.method == 'POST':
+            register_form = RegisterForm(request.POST)
 
-        #Se guarda el usuario
-        if register_form.is_valid():
-            register_form.save()
-            messages.success(request, 'Te has registrado correctamente')
-            return redirect('inicio')
+            #Se guarda el usuario
+            if register_form.is_valid():
+                register_form.save()
+                messages.success(request, 'Te has registrado correctamente')
+                return redirect('inicio')
 
 
-    return render(request, 'users/register.html',{
-        'title':'Registro',
-        'register_form': register_form
-    })
+        return render(request, 'users/register.html',{
+            'title':'Registro',
+            'register_form': register_form
+        })
 
 def login_page(request):
 
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+    if request.user.is_authenticated:
+        return redirect('inicio')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
 
-        user = authenticate(request, username = username, password = password)
+            user = authenticate(request, username = username, password = password)
 
-        if user is not None:
-            login(request, user)
-            messages.success(request, 'Has iniciado sesión correctamente')
-            return redirect('inicio')
+            if user is not None:
+                login(request, user)
+                messages.success(request, 'Has iniciado sesión correctamente')
+                return redirect('inicio')
 
-        else:
-            messages.warning(request, 'No te has identificado correctamente')
+            else:
+                messages.warning(request, 'No te has identificado correctamente')
 
-    return render(request, 'users/login.html',{
-        'title':'Iniciar sesión'
-    })
+        return render(request, 'users/login.html',{
+            'title':'Iniciar sesión'
+        })
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
